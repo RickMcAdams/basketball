@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="faccApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+    <script src="facc.js"></script>
+    <script src="faccServices.js"></script>
+    <link rel="stylesheet" href="facc.css">
+    <title>FACC Admin</title>
+  </head>
+  <body>
+    <h2>FACC Admin</h2>
+    <div ng-controller="FaccController">
+    <a href="" ng-click="allStats(this)">Stats</a>
+    <a href="" ng-click="accStats(this)">ACC Stats</a>
+      <table class="sorting-table">
+      <thead class="header">
+      <th>Rank</th>
+      <th><a href="" ng-click="predicate = 'team'; reverse=false">Team</a></th>
+      <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a></th>
+      <th><a href="" ng-click="predicate = 'minutes'; reverse=true">Minutes</a></th>
+      <th><a href="" ng-click="predicate = 'points'; reverse=true">Points</a></th>
+      <th><a href="" ng-click="predicate = 'rebounds'; reverse=true">Rebounds</a></th>
+      <th><a href="" ng-click="predicate = 'assists'; reverse=true">Assists</a></th>
+      <th><a href="" ng-click="predicate = 'steals'; reverse=true">Steals</a></th>
+      <th><a href="" ng-click="predicate = 'threes'; reverse=true">Threes</a></th>
+      <th><a href="" ng-click="predicate = 'blocks'; reverse=true">Blocks</a></th>
+      <th><a href="" ng-click="predicate = 'rating'; reverse=true">Rating</a></th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="player in players | orderBy:predicate:reverse" class="row">
+        <td>{{$index+1}}</td>
+        <td>{{player.team}}</td>
+        <td><a href="http://espn.go.com/ncb/player/profile?playerId={{player.id}}" target="_blank">{{player.name}}</a></td>
+        <td>{{player.minutes| number:1}}</td>
+        <td>{{player.points| number:1}}</td>
+        <td>{{player.rebounds| number:1}}</td>
+        <td>{{player.assists| number:1}}</td>
+        <td>{{player.steals| number:1}}</td>
+        <td>{{player.threes| number:1}}</td>
+        <td>{{player.blocks| number:1}}</td>
+        <td>{{player.rating| number:3}}</td>
+        </tr>  
+        </tbody>        
+      </table>
+    </div>
+  </body>
+</html>
