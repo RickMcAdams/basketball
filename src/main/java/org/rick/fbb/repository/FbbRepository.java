@@ -1015,13 +1015,13 @@ public class FbbRepository {
         try {
         	//controller.getAllOwnerPlayers(1);
         	//controller.mockPopulateOwners();
-            //controller.populateAllTeams();        	
+            controller.populateAllTeams();        	
             //controller.populateTeam("SYR");            
             //controller.copyOwnerPlayers(5,6);
             //controller.createNCAATeamFiles();
             //controller.populateAllNCAATeams();
            //controller.populateNCAATeam("2086");
-        	controller.getAllNCAAPlayers();
+        	//controller.getAllNCAAPlayers();
             //controller.getAllNCAAOwnerPlayers();
            
         } catch (Exception e) {
