@@ -45,5 +45,13 @@ public class NcaaPlayerJson implements Serializable{
 
 	public void setGames(List<GameJson> games) {
 		this.games = games;
-	}	
+	}
+	
+	public int getTotal(){
+		int total = 0;
+		for(GameJson game : games){
+			total += game.getTotal();
+		}
+		return total;
+	}
 }

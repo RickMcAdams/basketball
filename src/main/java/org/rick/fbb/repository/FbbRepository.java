@@ -741,7 +741,7 @@ public class FbbRepository {
     
     public List<Game> createNCAAGameList(Player player) {
 		List<Game> games = new ArrayList<Game>();
-    	games.add(player.getNCAAGame("03/10/2016", "03/13/2016"));
+    	games.add(player.getNCAAGame("03/17/2016", "03/18/2016"));
     	games.add(player.getNCAAGame("03/19/2016", "03/20/2016"));
     	games.add(player.getNCAAGame("03/24/2016", "03/25/2016"));
     	games.add(player.getNCAAGame("03/26/2016", "03/27/2016"));
@@ -1021,13 +1021,13 @@ public class FbbRepository {
             //controller.populateTeam("SYR");            
             //controller.copyOwnerPlayers(5,6);
             //controller.createNCAATeamFiles();
-            //controller.populateAllNCAATeams();
+            controller.populateAllNCAATeams();
            //controller.populateNCAATeam("2752");
         	/*List<Player> players = controller.getAllNCAAPlayers();
         	for(Player player : players){
         		System.out.println(player.getName() + player.avgPoints());
         	}*/
-            controller.getAllNCAAOwnerPlayers();
+            //controller.getAllNCAAOwnerPlayers();
            
         } catch (Exception e) {
             e.printStackTrace();

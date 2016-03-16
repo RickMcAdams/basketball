@@ -9,7 +9,7 @@
   </head>
   <style type="text/css">
 tr {
-background-color: rgb(250, 192, 144)
+##background-color: rgb(250, 192, 144)
 }
 tr.odd {
 	font-size: 10px;
@@ -52,6 +52,11 @@ td.statTotal {
 td.playerName {
 	width: 200px;	
 }
+
+td.bold {
+	font-weight: bold;
+}
+
 </style>
   <body>
     <h2>FNCAA Standings</h2>
@@ -59,14 +64,15 @@ td.playerName {
     <a href="" ng-click="ncaaStandings(this)">Stats</a>
     	<div ng-repeat="owner in owners " class="row">
         <table border="1">
-        <tr>
-         <td><b>{{owner.name}}</b></td>
-         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center'>T</td>
-         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center'>T</td>
-         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center'>T</td>
-         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center'>T</td>
-         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center'>T</td>
-         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center'>T</td>
+        <tr bgcolor='orange'>
+         <td ><b>{{owner.name}}</b></td>
+         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center' class='bold'><b>Rd 1</b></td>
+         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center' class='bold'><b>Rd 2</b></td>
+         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center' class='bold'><b>Rd 3</b></td>
+         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center' class='bold'><b>Rd 4</b></td>
+         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center' class='bold'><b>Rd 5</b></td>
+         		<td align='center'>P</td><td align='center'>R</td><td align='center'>A</td><td align='center' class='bold'><b>Rd 6</b></td>
+         		<td>Total</td>
          		
        </tr>
        <tr ng-repeat="player in owner.players"><td class='playerName'>{{player.name}} - {{player.team}}</td>
@@ -76,18 +82,18 @@ td.playerName {
          		<td align='center' class='stat'>{{player.games[3].points}}</td><td align='center'class='stat'>{{player.games[3].rebounds}}</td><td align='center'class='stat'>{{player.games[3].assists}}</td><td align='center'class='statTotal'><b>{{player.games[3].total}}</b></td>         		
          		<td align='center' class='stat'>{{player.games[4].points}}</td><td align='center'class='stat'>{{player.games[4].rebounds}}</td><td align='center'class='stat'>{{player.games[4].assists}}</td><td align='center'class='statTotal'><b>{{player.games[4].total}}</b></td>
          		<td align='center' class='stat'>{{player.games[5].points}}</td><td align='center'class='stat'>{{player.games[5].rebounds}}</td><td align='center'class='stat'>{{player.games[5].assists}}</td><td align='center'class='statTotal'><b>{{player.games[5].total}}</b></td>
-         		
+         		<td align='center' class='stat'>{{player.total}}</td>
        </tr>
         <tr>
 	  <td><b>Totals</b></td>	  
-	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>0</b></td>
-	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>0</b></td>
-	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>0</b></td>
-	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>0</b></td>
-	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>0</b></td>
-	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>0</b></td>
+	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>{{owner.totals[0]}}</b></td>
+	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>{{owner.totals[1]}}</b></td>
+	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>{{owner.totals[2]}}</b></td>
+	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>{{owner.totals[3]}}</b></td>
+	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>{{owner.totals[4]}}</b></td>
+	  <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align='center'><b>{{owner.totals[5]}}</b></td>
 	 
-	  <td><b>0</b></td>
+	  <td align='center'><b>{{owner.totals[6]}}</b></td>
 	  </tr>
       </table>
       <BR/>
