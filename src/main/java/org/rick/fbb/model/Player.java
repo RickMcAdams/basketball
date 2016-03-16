@@ -698,8 +698,7 @@ public class Player implements Serializable {
 		player.setId(id);
 		List<GameJson> gameList = new ArrayList<GameJson>();
 
-		for (Game game : this.getNCAAGames()) {
-			System.out.println("Got game");
+		for (Game game : this.getNCAAGames()) {			
 			if (game != null) {
 				gameList.add(game.getGameJson());
 			} else {
