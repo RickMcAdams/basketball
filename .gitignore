@@ -45,3 +45,14 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+.settings/org.eclipse.core.resources.prefs
+*.class
+.classpath
+.project
+.settings/org.eclipse.m2e.core.prefs
+target/classes/static/accPlayers.json
+target/surefire-reports/TEST-demo.FbbaApplicationTests.xml
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
+target/
