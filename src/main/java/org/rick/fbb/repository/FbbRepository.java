@@ -695,18 +695,20 @@ public class FbbRepository {
                 owners.add(owner);
             }
             
-            Vector ranks = new Vector();
+            Vector<BigDecimal> ranks = new Vector<BigDecimal>();
         	for (Owner owner : owners) {
         		 System.out.println(owner.getName());
         	  List<Player> players = owner.getPlayers();
         	  int playing = 0;
-        	  for (int a = 0; a < players.size(); a++) {
-        		
+        	  for (int a = 0; a < players.size(); a++) {         		  
         		players.get(a).setNCAAGames(createNCAAGameList(players.get(a)));   	
         		if(players.get(a).isPlaying()){
         		   playing++;
         		}
-        		System.out.println(players.get(a).getName() + ": " + players.get(a).getNCAAGamesTotal());
+        		//System.out.println(players.get(a).getName() + ": " + players.get(a).getNCAAGamesTotal());
+        		if(players.get(a).getNCAAGames().get(0) != null){
+        			System.out.println(players.get(a).getName() + ": " + players.get(a).getNCAAGames().get(0).getPoints());
+        		}
         	  }
         	  List<BigDecimal> totals = getTotals(players);
         	  System.out.println("Total = " + totals.get(0));
@@ -739,12 +741,12 @@ public class FbbRepository {
     
     public List<Game> createNCAAGameList(Player player) {
 		List<Game> games = new ArrayList<Game>();
-    	games.add(player.getNCAAGame("03/19/2015", "03/20/2015"));
-    	games.add(player.getNCAAGame("03/21/2015", "03/22/2015"));
-    	games.add(player.getNCAAGame("03/26/2015", "03/27/2015"));
-    	games.add(player.getNCAAGame("03/28/2015", "03/29/2015"));
-    	games.add(player.getNCAAGame("04/04/2015", "04/04/2015"));
-    	games.add(player.getNCAAGame("04/06/2015", "04/06/2015"));
+    	games.add(player.getNCAAGame("03/10/2016", "03/13/2016"));
+    	games.add(player.getNCAAGame("03/19/2016", "03/20/2016"));
+    	games.add(player.getNCAAGame("03/24/2016", "03/25/2016"));
+    	games.add(player.getNCAAGame("03/26/2016", "03/27/2016"));
+    	games.add(player.getNCAAGame("04/02/2016", "04/02/2016"));
+    	games.add(player.getNCAAGame("04/04/2016", "04/04/2016"));
     	return games;
   }
 
@@ -1020,9 +1022,12 @@ public class FbbRepository {
             //controller.copyOwnerPlayers(5,6);
             //controller.createNCAATeamFiles();
             //controller.populateAllNCAATeams();
-           //controller.populateNCAATeam("2086");
-        	controller.getAllNCAAPlayers();
-            //controller.getAllNCAAOwnerPlayers();
+           //controller.populateNCAATeam("2752");
+        	/*List<Player> players = controller.getAllNCAAPlayers();
+        	for(Player player : players){
+        		System.out.println(player.getName() + player.avgPoints());
+        	}*/
+            controller.getAllNCAAOwnerPlayers();
            
         } catch (Exception e) {
             e.printStackTrace();

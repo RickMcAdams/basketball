@@ -204,14 +204,14 @@ public class GetStatsNCAA {
         games[4] = player.getNCAAGame("02/28/2011", "03/03/2011");
         games[5] = player.getNCAAGame("03/04/2011", "03/06/2011");*/
 
-        games.add(player.getNCAAGame("03/15/2012", "03/16/2012"));
-        games.add(player.getNCAAGame("03/17/2012", "03/18/2012"));
-        games.add(player.getNCAAGame("03/22/2012", "03/23/2012"));
-        games.add(player.getNCAAGame("03/24/2012", "03/25/2012"));
-        games.add(player.getNCAAGame("03/31/2012", "03/31/2012"));
-        games.add(player.getNCAAGame("04/02/2012", "04/02/2012"));
-        //System.out.println(player.getName());
-        //System.out.println(games[0].gameToNCAAStatLine());
+        games.add(player.getNCAAGame("03/11/2016", "03/12/2016"));
+        games.add(player.getNCAAGame("03/17/2016", "03/18/2016"));
+        games.add(player.getNCAAGame("03/22/2016", "03/23/2016"));
+        games.add(player.getNCAAGame("03/24/2016", "03/25/2016"));
+        games.add(player.getNCAAGame("03/31/2016", "03/31/2016"));
+        games.add(player.getNCAAGame("04/02/2016", "04/02/2016"));
+        System.out.println(player.getName());
+        System.out.println(games.get(0).gameToNCAAStatLine());
         return games;
     }
 

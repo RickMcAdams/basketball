@@ -16,6 +16,7 @@
       <th><a href="" ng-click="predicate = 'region'; reverse=true">Region</a></th>
       <th><a href="" ng-click="predicate = 'seed'; reverse=true">Seed</a></th>
       <th><a href="" ng-click="predicate = 'team'; reverse=false">Team</a></th>
+      <th><a href="" ng-click="predicate = 'team'; reverse=false">Id</a></th>
       <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a></th>   
       <th><a href="" ng-click="predicate = 'minutes'; reverse=true">Minutes</a></th>
       <th><a href="" ng-click="predicate = 'points'; reverse=true">Points</a></th>
@@ -27,7 +28,8 @@
         <tr ng-repeat="player in players | orderBy:predicate:reverse" class="row">
          <td>{{player.region}}</td>
           <td>{{player.seed}}</td>
-         <td>{{player.team}}</td>         
+         <td>{{player.team}}</td>
+         <td>{{player.id}}</td>         
         <td><a href="http://espn.go.com/ncb/player/profile?playerId={{player.id}}" target="_blank">{{player.name}}</a></td>
         <td>{{player.minutes| number:1}}</td>
         <td>{{player.points| number:1}}</td>

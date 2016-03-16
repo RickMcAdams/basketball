@@ -49,7 +49,7 @@ public class Util {
     }
 
     public static int getCurrentYear(){
-    	return 2015;
+    	return 2016;
     }
     
     public static String getBeginDate(String week){
