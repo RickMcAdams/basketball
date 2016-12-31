@@ -2,7 +2,7 @@ package org.rick.fbb.model;
 
 import java.io.Serializable;
 
-public class PlayerJson implements Serializable{	
+public class PlayerJson implements Serializable {
 	private static final long serialVersionUID = 6460685261711951504L;
 	String name;
 	String team;
@@ -18,11 +18,11 @@ public class PlayerJson implements Serializable{
 	float ncaaTotal;
 	long seed;
 	String region;
-	
-	public PlayerJson(){
-		
+
+	public PlayerJson() {
+
 	}
-	
+
 	public long getSeed() {
 		return seed;
 	}
@@ -39,8 +39,6 @@ public class PlayerJson implements Serializable{
 		this.region = region;
 	}
 
-
-	
 	public String getName() {
 		return name;
 	}
@@ -128,7 +126,7 @@ public class PlayerJson implements Serializable{
 	public void setRating(float rating) {
 		this.rating = rating;
 	}
-	
+
 	public float getNCAATotal() {
 		return ncaaTotal;
 	}
@@ -137,5 +135,4 @@ public class PlayerJson implements Serializable{
 		this.ncaaTotal = ncaaTotal;
 	}
 
-	
 }

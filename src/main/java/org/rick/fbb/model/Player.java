@@ -380,10 +380,10 @@ public class Player implements Serializable {
 			// System.out.println("IS" + date.getTimeInMillis() + " " +
 			// games.get(i).getOpponent() + " " + date.toString());
 			// System.out.println("END" + end.getTimeInMillis() +"\n");
-			if ((date.after(begin) || date.equals(begin)) && (date.before(end) || date.equals(end))) { 
+			if ((date.after(begin) || date.equals(begin)) && (date.before(end) || date.equals(end))) {
 				// if (date.before(end1)) {
 				game = games.get(i);
-				//System.out.println("got game " + game.gameToNCAAStatLine());
+				// System.out.println("got game " + game.gameToNCAAStatLine());
 				break;
 			}
 		}
@@ -698,7 +698,7 @@ public class Player implements Serializable {
 		player.setId(id);
 		List<GameJson> gameList = new ArrayList<GameJson>();
 
-		for (Game game : this.getNCAAGames()) {			
+		for (Game game : this.getNCAAGames()) {
 			if (game != null) {
 				gameList.add(game.getGameJson());
 			} else {
