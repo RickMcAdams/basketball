@@ -91,7 +91,8 @@ public class ESPNWriter {
 		int i = 0;
 		while (i < 6) {
 			int beginEnd = begin + 10;
-			if (teamFile.substring(begin + 5, begin + 6).contains("3")) {
+			if (teamFile.substring(begin + 5, begin + 6).contains("3")
+					|| teamFile.substring(begin + 5, begin + 6).contains("4")) {
 				beginEnd = begin + 12;
 			}
 			playerIds.add(teamFile.substring(begin + 5, beginEnd));
@@ -103,7 +104,7 @@ public class ESPNWriter {
 
 		FileWriter writer = new FileWriter("c:\\dev\\data\\fncaa\\teams\\" + teamId + ".txt");
 		for (String player : playerIds) {
-			writer.write(player + "\n");
+			writer.write(player + " #####\n");
 		}
 		writer.flush();
 		writer.close();

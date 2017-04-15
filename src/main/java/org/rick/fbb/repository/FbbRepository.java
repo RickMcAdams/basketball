@@ -344,6 +344,9 @@ public class FbbRepository {
 		BufferedReader reader = new BufferedReader(new FileReader("C:\\dev\\data\\FNCAA\\teams\\" + teamId + ".txt"));
 		ESPNWriter writer = new ESPNWriter();
 		String text = reader.readLine();
+		if (text != null && text.length() > 10) {
+			text = text.substring(0, text.indexOf(" "));
+		}
 
 		while (text != null) {
 			Player player;
@@ -356,6 +359,9 @@ public class FbbRepository {
 				results.add(e.toString());
 			}
 			text = reader.readLine();
+			if (text != null && text.length() > 10) {
+				text = text.substring(0, text.indexOf(" "));
+			}
 
 		}
 		reader.close();
@@ -406,9 +412,10 @@ public class FbbRepository {
 		ESPNWriter espnWriter = new ESPNWriter();
 		try {
 			for (Team team : teams) {
-				System.out.println(team.getId());
+				System.out.println(team.getId() + " - " + team.getName());
 				espnWriter.getTeam(team.getId());
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -738,12 +745,12 @@ public class FbbRepository {
 
 	public List<Game> createNCAAGameList(Player player) {
 		List<Game> games = new ArrayList<Game>();
-		games.add(player.getNCAAGame("03/17/2016", "03/18/2016"));
-		games.add(player.getNCAAGame("03/19/2016", "03/20/2016"));
-		games.add(player.getNCAAGame("03/24/2016", "03/25/2016"));
-		games.add(player.getNCAAGame("03/26/2016", "03/27/2016"));
-		games.add(player.getNCAAGame("04/02/2016", "04/02/2016"));
-		games.add(player.getNCAAGame("04/04/2016", "04/04/2016"));
+		games.add(player.getNCAAGame("03/16/2017", "03/17/2017"));
+		games.add(player.getNCAAGame("03/18/2017", "03/19/2017"));
+		games.add(player.getNCAAGame("03/23/2017", "03/24/2017"));
+		games.add(player.getNCAAGame("03/25/2017", "03/26/2017"));
+		games.add(player.getNCAAGame("04/01/2017", "04/01/2017"));
+		games.add(player.getNCAAGame("04/03/2017", "04/03/2017"));
 		return games;
 	}
 
@@ -1011,11 +1018,11 @@ public class FbbRepository {
 		try {
 			// controller.getAllOwnerPlayers(1);
 			// controller.mockPopulateOwners();
-			controller.populateAllTeams();
-			// controller.populateTeam("NCS");
+			// controller.populateAllTeams();
+			// controller.populateTeam("CLEM");
 			// controller.createNCAATeamFiles();
-			// controller.populateAllNCAATeams();
-			// controller.populateNCAATeam("2752");
+			controller.populateAllNCAATeams();
+			// controller.populateNCAATeam("12");
 			/*
 			 * List<Player> players = controller.getAllNCAAPlayers(); for(Player
 			 * player : players){ System.out.println(player.getName() +
