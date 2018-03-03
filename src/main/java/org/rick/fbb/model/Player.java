@@ -548,7 +548,7 @@ public class Player implements Serializable {
 			float threes) {
 
 		this.setEfficiency((this.avgPoints() / points) + (this.avgRebounds() / rebounds) + (this.avgAssists() / assists)
-				+ (this.avgSteals() / steals) + (this.avgBlocks() / blocks) + (this.avgThrees() / threes));
+				+ (this.avgSteals() / steals)*(float).8 + (this.avgBlocks() / blocks) + (this.avgThrees() / threes));
 
 	}
 

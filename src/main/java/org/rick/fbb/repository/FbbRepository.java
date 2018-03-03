@@ -1018,10 +1018,10 @@ public class FbbRepository {
 		try {
 			// controller.getAllOwnerPlayers(1);
 			// controller.mockPopulateOwners();
-			// controller.populateAllTeams();
-			// controller.populateTeam("CLEM");
-			// controller.createNCAATeamFiles();
-			controller.populateAllNCAATeams();
+			//controller.populateAllTeams();
+			//controller.populateTeam("ND");
+			controller.createNCAATeamFiles();
+			//controller.populateAllNCAATeams();
 			// controller.populateNCAATeam("12");
 			/*
 			 * List<Player> players = controller.getAllNCAAPlayers(); for(Player

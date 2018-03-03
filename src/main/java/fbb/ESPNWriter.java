@@ -8,72 +8,14 @@ import org.rick.fbb.model.Game;
 import org.rick.fbb.model.Player;
 import org.rick.fbb.util.Util;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author User
- */
 public class ESPNWriter {
 	String source = "ESPN";
 
 	public static final String link = "http://espn.go.com/mens-college-basketball/player/gamelog/_/id/";
 	public static final String teamLink = "http://espn.go.com/mens-college-basketball/team/stats/_/id/";
 
-	// public void getAllGamesPlayersListESPN() throws IOException{
-	// //BufferedReader reader = new BufferedReader(new
-	// FileReader("C:\\dev\\data\\facc\\accplayers.txt"));
-	// FileWriter writer = new
-	// FileWriter("c:\\dev\\data\\facc\\playerlist.html");
-	// FbbController controller = new FbbController();
-	// //String text = reader.readLine();
-	// //System.out.println(text);
-	// writer.write("<table>");
-	// List<Player> players = controller.getAllPlayers();
-	// for(Player player : players){
-	// writer.write(player.printAverages("ESPN"));
-	// }
-	// writer.write("</table>");
-	// writer.flush();
-	// }
-	//
-	// public void getAllACCGamesPlayersListESPN() throws IOException {
-	// //BufferedReader reader = new BufferedReader(new
-	// FileReader("C:\\dev\\data\\facc\\accplayers.txt"));
-	// FileWriter writer = new
-	// FileWriter("c:\\dev\\data\\facc\\accplayerlist.html");
-	// FbbController controller = new FbbController();
-	// //String text = reader.readLine();
-	// //System.out.println(text);
-	// writer.write("<table>");
-	// List<Player> players = controller.getAllPlayers();
-	// for(Player player : players){
-	// writer.write(player.printACCAverages("ESPN"));
-	// }
-	// writer.write("</table>");
-	// writer.flush();
-	// }
-
-	/*
-	 * public Owner[] getOwnerPlayers(String file) throws FileNotFoundException,
-	 * IOException { Owner[] results = null;
-	 * 
-	 * ArrayList owners = new ArrayList(); List<Player> players = new
-	 * ArrayList();
-	 * 
-	 * BufferedReader reader = new BufferedReader(new FileReader(file)); for
-	 * (int i = 0; i < 9; i++) { String text = reader.readLine(); String name =
-	 * text.substring(3, text.indexOf("-->")); for (int j = 0; j < 8; j++) {
-	 * text = reader.readLine(); String playerId = text.substring(0, 6).trim();
-	 * players.add(getPlayer(playerId)); }
-	 * 
-	 * Owner owner = new Owner(); owner.setName(name);
-	 * owner.setPlayers(players); owners.add(owner); players.clear(); } results
-	 * = new Owner[owners.size()]; owners.toArray(results); return results; }
-	 */
+	
 
 	public void getTeam(String teamId) throws Exception {
 		String teamFile;
@@ -136,7 +78,7 @@ public class ESPNWriter {
 	}
 
 	public String getGameLog(String playerFile) {
-		int begin = playerFile.indexOf("2016-17 Game Log");
+		int begin = playerFile.indexOf("2017-18 Game Log");
 		int end = playerFile.indexOf("</table>", begin);
 		return playerFile.substring(begin, end);
 	}
